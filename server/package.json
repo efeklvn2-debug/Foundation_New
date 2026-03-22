@@ -1,0 +1,34 @@
+{
+  "name": "emerhana-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Pa J.I. Emerhana Foundation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^7.1.0",
+    "nodemailer": "^6.9.15",
+    "pino": "^8.17.2",
+    "pino-pretty": "^11.2.2",
+    "express-validator": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.9.0",
+    "@types/nodemailer": "^6.4.14",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^1.3.1"
+  }
+}
