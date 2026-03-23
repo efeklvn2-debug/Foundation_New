@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
@@ -56,7 +56,7 @@ app.post(
     body('email').isEmail().withMessage('Valid email is required'),
     body('paymentMethod').isIn(['bank_transfer', 'online']).optional(),
   ],
-  async (req, res) => {
+  async (req: Request, res: Response) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -104,7 +104,7 @@ app.post(
     body('email').isEmail().withMessage('Valid email is required'),
     body('message').trim().notEmpty().withMessage('Message is required'),
   ],
-  async (req, res) => {
+  async (req: Request, res: Response) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -244,7 +244,7 @@ app.get('/api/cms/:contentType', async (req, res) => {
     const { limit = 20, page = 1 } = req.query;
 
     // Placeholder - implement database query
-    const data = [];
+    const data: any[] = [];
     const total = 0;
 
     res.json({
